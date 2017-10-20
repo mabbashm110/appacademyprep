@@ -40,9 +40,12 @@ while cool_things.length < 3
 end
 
 # Removing array items using shift [From the beginning] or pop [from the end]
-cool_things = ["a", "b", "c"]
+cool_things = ["a", "b", "c", "d", "e", "f"]
+puts("Here is the length of your array " + cool_things.length.to_s)
 item_to_remove = cool_things.shift
-puts(item_to_remove + " is the item removed")
+puts(item_to_remove + " is the item removed using SHIFT")
+item_to_remove = cool_things.pop
+puts(item_to_remove + " is the item removed using POP")
 puts("I'll reprint your array for you now...")
 reprint_array = 0
 while reprint_array < cool_things.length
@@ -50,3 +53,26 @@ while reprint_array < cool_things.length
     reprint_array = reprint_array + 1
     puts(cool_things.length.to_s + " is the length of the array")
 end
+
+# Setting positions in an array
+puts("I am now going to change the value of the array position 0...")
+cool_things[0] = "Value reset here arr[0]"
+puts(cool_things[4]) # No error thrown in Ruby when referencing undefined position in array
+reprint_array = 0
+while reprint_array < cool_things.length
+    puts(cool_things[reprint_array])
+    reprint_array = reprint_array + 1
+end
+
+# Strings are like arrays
+puts("====STRINGS SIMILAR TO ARRAYS IN SOME WAYS====")
+str = "abcd"
+puts("Your string is abcd")
+puts(str.length.to_s + " is the length of your string")
+
+str = "a b c d" #NOTE Split only works if there are spaces between words
+puts("I will just split a b c d now....")
+puts(str.split)
+
+puts("I will now re-join the array")
+puts(str.join(" ")) # Joins as a single sentence
